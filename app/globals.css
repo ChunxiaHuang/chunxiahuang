@@ -3,19 +3,46 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-default: var(--font-roboto);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* color: var(--foreground);
+  background: var(--background); */
+  /* font-family: Arial, Helvetica, sans-serif, Georgia, "Times New Roman", Times,
+    serif; */
+  font-family: var(--font-default), sans-serif;
+  margin: 0;
+  height: 100vh;
+  /* overflow: auto;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* display: block; /* 确保是默认的 block 布局 */
+  /* background: linear-gradient(to right, #36019a, #cc028f); */
+}
+/* 
+header {
+  margin: 10px;
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+} */
+.modal-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.modal-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.modal-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+.modal-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
