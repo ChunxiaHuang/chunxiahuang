@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --font-roboto: "Roboto", sans-serif;
   --font-default: var(--font-roboto);
 }
 
@@ -11,7 +12,7 @@ body {
   background: var(--background); */
   /* font-family: Arial, Helvetica, sans-serif, Georgia, "Times New Roman", Times,
     serif; */
-  font-family: var(--font-default), sans-serif;
+  font-family: var(--font-roboto), sans-serif;
   margin: 0;
   height: 100vh;
   /* overflow: auto;

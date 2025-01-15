@@ -22,43 +22,43 @@ export default function Header() {
   return (
     <>
         <header className="px-16 py-8 bg-purple-600 text-white">
-            <nav className="flex justify-between">
-                <h1 className="text-2xl font-bold">Chunxia Huang</h1>
+            <nav className="flex items-center justify-between">
+                <h1 className="text-xl font-bold">C - H</h1>
                 <div className="flex items-center space-x-8">
-                <a
-                    href="/"
-                    className={`hover:underline ${
-                    activePath === "/" ? "font-extraboldbold" : ""
-                    }`}
-                >
-                    Home
-                </a>
-                <a
-                    href="/about"
-                    className={`hover:underline ${
-                        activePath === "/about" ? "font-extraboldbold" : ""
-                    }`}
-                >
-                    About
-                </a>
-                <a
-                    href="/projects"
-                    className={`hover:underline ${
-                        activePath === "/projects" ? "font-extrabold" : ""
-                    }`}
-                >
-                    Projects
-                </a>
-                <a
-                    href="#"
-                    onClick={(e) => {
-                        e.preventDefault();
-                        setIsModalOpen(true);
-                    }}
-                    className={contactButtonClass}
-                >
-                    Contact
-                </a>
+                    <a
+                        href="/"
+                        className={`hover:underline ${
+                        activePath === "/" ? "font-extraboldbold" : ""
+                        }`}
+                    >
+                        Home
+                    </a>
+                    <a
+                        href="/about"
+                        className={`hover:underline ${
+                            activePath === "/about" ? "font-extraboldbold" : ""
+                        }`}
+                    >
+                        About Me
+                    </a>
+                    <a
+                        href="/projects"
+                        className={`hover:underline ${
+                            activePath === "/projects" ? "font-extrabold" : ""
+                        }`}
+                    >
+                        Projects
+                    </a>
+                    <a
+                        href="#"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setIsModalOpen(true);
+                        }}
+                        className={contactButtonClass}
+                    >
+                        Contact Me
+                    </a>
                 </div>
             </nav>
         </header>
@@ -81,10 +81,10 @@ export default function Header() {
                         <FaTimes />
                     </button>
                     <form className="flex flex-col mt-4">
-                    <input type="text" name="name" placeholder="Name" className="p-2 border rounded mb-2" />
-                    <input type="email" name="email" placeholder="Email" className="p-2 border rounded mb-2" />
-                    <textarea name="message" placeholder="Message" className="p-2 border rounded mb-2 h-[200px]"></textarea>
-                    <button type="submit" className="p-2 bg-purple-600 text-white rounded">Send</button>
+                        <input type="text" name="name" placeholder="Name" className="p-2 border rounded mb-2" />
+                        <input type="email" name="email" placeholder="Email" className="p-2 border rounded mb-2" />
+                        <textarea name="message" placeholder="Message" className="p-2 border rounded mb-2 max-h-[200px]"></textarea>
+                        <button type="submit" className="p-2 bg-purple-600 text-white rounded">Send</button>
                     </form>
                 </div>
             </div>
