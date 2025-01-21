@@ -1,10 +1,13 @@
 "use client";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FaTimes } from "react-icons/fa";
 
 export default function Header() {
   const pathname = usePathname();
+  // State to control the hamburger menu
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activePath, setActivePath] = useState(pathname || "/");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -15,16 +18,32 @@ export default function Header() {
   }, [pathname]);
 
 
-  const contactButtonClass = `ml-4 bg-yellow-500 text-white font-semibold px-6 py-2 rounded-full hover:bg-yellow-600 transition ${
+  const contactButtonClass = `ml-4 border border-white text-white font-semibold px-6 py-2 rounded-full bg-transparent transition hover:shadow-[0_0_10px_2px_rgba(255,255,255,0.8)] ${
     activePath === "/contact" ? "font-extrabold" : ""
   }`;
   
   return (
     <>
-        <header className="px-16 py-8 bg-purple-600 text-white">
-            <nav className="flex items-center justify-between">
-                <h1 className="text-xl font-bold">C - H</h1>
-                <div className="flex items-center space-x-8">
+        <header className="px-6 sm:px-8 md:px-16 py-8 bg-purple-600 text-white">
+            <nav className="flex flex-wrap items-center justify-between">
+                <Link href="/">
+                    <img
+                        src={`/chlogo.png`}  // Construct the path to the image
+                        alt='chunxia' 
+                        className="object-cover max-h-12 mb-4 m-auto"
+                    />
+                </Link>
+                {/* Hamburger Menu for Small Screens */}
+                {/* <button 
+                    className="block md:hidden p-2 rounded bg-purple-700"
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                >
+                    ☰
+                </button> */}
+                {/* Navigation Links */}
+                <div 
+                    className={`flex flex-row items-center space-x-3 md:space-x-8`}
+                >
                     <a
                         href="/"
                         className={`hover:underline ${
@@ -55,7 +74,7 @@ export default function Header() {
                             e.preventDefault();
                             setIsModalOpen(true);
                         }}
-                        className={contactButtonClass}
+                        className="btn-glow"
                     >
                         Contact Me
                     </a>
@@ -70,7 +89,7 @@ export default function Header() {
             onClick={() => setIsModalOpen(false)} // 点击背景关闭 Modal
             >
                 <div
-                    className="bg-white rounded-lg shadow-lg w-[500px] p-6 relative"
+                    className="bg-white rounded-lg shadow-lg w-[300px] lg:w-[500px] p-6 relative"
                     onClick={(e) => e.stopPropagation()} // 防止点击 Modal 内部关闭
                 >
                     <h1 className="text-3xl font-bold">Contact Me</h1>

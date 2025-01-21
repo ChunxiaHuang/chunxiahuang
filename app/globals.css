@@ -29,6 +29,22 @@ header {
   position: relative;
   z-index: 1;
 } */
+
+.h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: var(--font-roboto);
+  color: rgb(255, 217, 252);
+}
+.h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: var(--font-roboto);
+  color: rgb(255, 217, 252);
+}
+.p {
+  color: rgb(255, 217, 252);
+}
 .modal-enter {
   opacity: 0;
   transform: scale(0.9);
@@ -46,4 +62,20 @@ header {
   opacity: 0;
   transform: scale(0.9);
   transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.btn-glow {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.btn-glow:hover {
+  background-color: white;
+  color: #6b46c1; /* Purple color */
+  box-shadow: 0 0 20px rgba(255, 255, 0, 0.6);
 }
