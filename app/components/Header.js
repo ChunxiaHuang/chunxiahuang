@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Header() {
   const pathname = usePathname();
@@ -34,38 +34,22 @@ export default function Header() {
                     />
                 </Link>
                 {/* Hamburger Menu for Small Screens */}
-                {/* <button 
-                    className="block md:hidden p-2 rounded bg-purple-700"
+                <button 
+                    className="block md:hidden p-2"
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
-                    ☰
-                </button> */}
+                    { isMenuOpen ? <FaTimes /> : <FaBars /> }
+                </button>
                 {/* Navigation Links */}
-                <div 
-                    className={`flex flex-row items-center space-x-3 md:space-x-8`}
-                >
-                    <a
-                        href="/"
-                        className={`hover:underline ${
-                        activePath === "/" ? "font-extraboldbold" : ""
-                        }`}
-                    >
+                {/* Desktop Navigation */}
+                <div className="hidden md:flex items-center space-x-8">
+                    <a href="/" className="hover:font-bold">
                         Home
                     </a>
-                    <a
-                        href="/about"
-                        className={`hover:underline ${
-                            activePath === "/about" ? "font-extraboldbold" : ""
-                        }`}
-                    >
+                    <a href="/about" className="hover:font-bold">
                         About Me
                     </a>
-                    <a
-                        href="/projects"
-                        className={`hover:underline ${
-                            activePath === "/projects" ? "font-extrabold" : ""
-                        }`}
-                    >
+                    <a href="/projects" className="hover:font-bold">
                         Projects
                     </a>
                     <a
@@ -80,6 +64,45 @@ export default function Header() {
                     </a>
                 </div>
             </nav>
+            {/* Mobile Dropdown Menu */}
+            {isMenuOpen && (
+                <div
+                    className="absolute top-0 left-0 w-full h-auto mt-24 py-16 bg-purple-600 text-white flex flex-col items-center justify-center space-y-8 z-50"
+                >
+                    <a
+                        href="/"
+                        className="text-2xl hover:underline"
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        Home
+                    </a>
+                    <a
+                        href="/about"
+                        className="text-2xl hover:underline"
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        About Me
+                    </a>
+                    <a
+                        href="/projects"
+                        className="text-2xl hover:underline"
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        Projects
+                    </a>
+                    <a
+                        href="#"
+                        className="text-2xl btn-glow"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            setIsMenuOpen(false);
+                            setIsModalOpen(true);
+                        }}
+                    >
+                        Contact Me
+                    </a>
+                </div>
+            )}
         </header>
 
         {/* Modal */}
