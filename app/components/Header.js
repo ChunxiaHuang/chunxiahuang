@@ -30,7 +30,7 @@ export default function Header() {
                     <img
                         src={`/chlogo.png`}  // Construct the path to the image
                         alt='chunxia' 
-                        className="object-cover max-h-10 mb-2 m-auto"
+                        className="object-cover max-h-12 mb-2 m-auto"
                     />
                 </Link>
                 {/* Hamburger Menu for Small Screens */}
