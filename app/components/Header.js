@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaHome, FaTimes } from "react-icons/fa";
 import ContactModal from "./ContactModal";
 
 export default function Header() {
@@ -19,19 +19,19 @@ export default function Header() {
   }, [pathname]);
 
 
-  const contactButtonClass = `ml-4 border border-white text-white font-semibold px-6 py-2 rounded-full bg-transparent transition hover:shadow-[0_0_10px_2px_rgba(255,255,255,0.8)] ${
-    activePath === "/contact" ? "font-extrabold" : ""
-  }`;
+//   const contactButtonClass = `ml-4 border border-white text-white font-semibold px-6 py-2 rounded-full bg-transparent transition hover:shadow-[0_0_10px_2px_rgba(255,255,255,0.8)] ${
+//     activePath === "/contact" ? "font-extrabold" : ""
+//   }`;
   
   return (
     <>
-        <header className="px-6 sm:px-8 md:px-16 py-8 bg-purple-600 text-white">
+        <header className="px-6 md:px-16 py-8 bg-purple-600 text-white">
             <nav className="flex flex-wrap items-center justify-between">
                 <Link href="/">
                     <img
                         src={`/chlogo.png`}  // Construct the path to the image
                         alt='chunxia' 
-                        className="object-cover max-h-12 mb-2 m-auto"
+                        className="object-cover max-h-6 md:max-h-10 mb-2 m-auto"
                     />
                 </Link>
                 {/* Hamburger Menu for Small Screens */}
@@ -43,7 +43,7 @@ export default function Header() {
                 </button>
                 {/* Navigation Links */}
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center space-x-8">
+                <div className="hidden md:flex items-center space-x-8 font-medium">
                     <a href="/" className="hover:font-bold">
                         Home
                     </a>
@@ -72,28 +72,29 @@ export default function Header() {
                 >
                     <a
                         href="/"
-                        className="text-2xl hover:font-bold"
+                        className="text-2xl font-medium hover:font-bold flex space-x-2 items-center"
                         onClick={() => setIsMenuOpen(false)}
                     >
-                        Home
+                        {/* <FaHome /> */}
+                        <p>Home</p>
                     </a>
                     <a
                         href="/about"
-                        className="text-2xl hover:font-bold"
+                        className="text-2xl font-medium hover:font-bold"
                         onClick={() => setIsMenuOpen(false)}
                     >
                         About Me
                     </a>
                     <a
                         href="/projects"
-                        className="text-2xl hover:font-bold"
+                        className="text-2xl font-medium hover:font-bold"
                         onClick={() => setIsMenuOpen(false)}
                     >
                         Projects
                     </a>
                     <a
                         href="#"
-                        className="text-2xl btn-glow"
+                        className="btn-glow text-2xl"
                         onClick={(e) => {
                             e.preventDefault();
                             setIsMenuOpen(false);
@@ -109,29 +110,6 @@ export default function Header() {
         {/* Modal */}
         {isModalOpen && (
             <ContactModal setIsModalOpen={setIsModalOpen}/>
-            // <div
-            // className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
-            // onClick={() => setIsModalOpen(false)} // 点击背景关闭 Modal
-            // >
-            //     <div
-            //         className="bg-white rounded-lg shadow-lg w-[300px] lg:w-[500px] p-6 relative"
-            //         onClick={(e) => e.stopPropagation()} // 防止点击 Modal 内部关闭
-            //     >
-            //         <h1 className="text-3xl font-bold">Contact Me</h1>
-            //         <button 
-            //         className="absolute top-3 right-3 text-gray-600 hover:text-black"
-            //         onClick={() => setIsModalOpen(false)}
-            //         >
-            //             <FaTimes />
-            //         </button>
-            //         <form className="flex flex-col mt-4">
-            //             <input type="text" name="name" placeholder="Name" className="p-2 border rounded mb-2" />
-            //             <input type="email" name="email" placeholder="Email" className="p-2 border rounded mb-2" />
-            //             <textarea name="message" placeholder="Message" className="p-2 border rounded mb-2 max-h-[200px]"></textarea>
-            //             <button type="submit" className="p-2 bg-purple-600 text-white rounded">Send</button>
-            //         </form>
-            //     </div>
-            // </div>
         )}
     </>
   );

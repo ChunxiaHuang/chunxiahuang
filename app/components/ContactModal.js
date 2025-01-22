@@ -42,7 +42,7 @@ export default function ContactModal( {setIsModalOpen} ) {
       onClick={() => setIsModalOpen(false)} // 点击背景关闭 Modal
       >
         <div
-            className="bg-white rounded-lg shadow-lg w-[300px] lg:w-[500px] p-6 relative"
+            className="bg-white rounded-lg shadow-lg w-[300px] md:w-[500px] p-6 relative"
             onClick={(e) => e.stopPropagation()} // 防止点击 Modal 内部关闭
         >
             <h1 className="text-2xl font-bold">Contact Me</h1>
@@ -79,7 +79,7 @@ export default function ContactModal( {setIsModalOpen} ) {
                   className="p-2 border rounded mb-2 h-[200px]"
                   required
                 ></textarea>
-                <button type="submit" className="p-2 bg-purple-600 text-white rounded">Send</button>
+                <button type="submit" className="p-2 bg-purple-600 text-white text-xl rounded hover:font-bold hover:bg-purple-700">Send</button>
             </form>
         </div>
     </div>

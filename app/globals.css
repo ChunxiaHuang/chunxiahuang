@@ -22,13 +22,6 @@ body {
   /* display: block; /* 确保是默认的 block 布局 */
   /* background: linear-gradient(to right, #36019a, #cc028f); */
 }
-/* 
-header {
-  margin: 10px;
-  padding: 16px;
-  position: relative;
-  z-index: 1;
-} */
 
 .h1 {
   font-size: 3rem;
@@ -65,17 +58,28 @@ header {
 }
 .btn-glow {
   background-color: transparent;
-  border: 2px solid white;
+  /* border: 1px solid rgba(255,255,255,0.7); */
   color: white;
   font-weight: bold;
   padding: 0.5rem 1.5rem;
   border-radius: 9999px;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 0 5px rgba(255, 255, 255, 1), /* 外发光 */
+    inset 0 0 1px rgba(255, 255, 255, 1); /* 内发光 */
 }
 
 .btn-glow:hover {
-  background-color: white;
-  color: #6b46c1; /* Purple color */
-  box-shadow: 0 0 20px rgba(255, 255, 0, 0.6);
+  /* background-color: white;
+  color: #6b46c1; Purple color */
+  box-shadow: 
+    0 0 15px rgba(255, 255, 255, 1),
+    inset 0 0 1px rgba(255, 255, 255, 1); /* 内发光 */;
+
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  color: white;
 }

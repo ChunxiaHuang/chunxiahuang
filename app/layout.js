@@ -22,9 +22,9 @@ const roboto = Roboto({
 export const metadata = {
   title: "Chunxia Huang",
   description: "Welcome to my personal website! I am a passionate software developer with a background in graphic design. Explore my portfolio, discover my projects, and connect with me to collaborate on creating impactful and user-friendly solutions. Let's bring ideas to life together!",
-  icons: {
-    icon: "/ch.png", 
-  },
+  // icons: {
+  //   icon: "/ch.png", 
+  // },
 };
 
 export default function RootLayout({ children }) {

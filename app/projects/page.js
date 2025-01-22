@@ -6,7 +6,7 @@ const projects = [
   export default function Projects() {
     return (
       <div className="bg-gradient-to-b from-purple-600 to-blue-600 h-screen">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 md:px-16 lg:gap-10">
           {projects.map((project, index) => (
             <div
             key={index} 
