@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import ContactModal from "./ContactModal";
 
 export default function Header() {
   const pathname = usePathname();
@@ -71,21 +72,21 @@ export default function Header() {
                 >
                     <a
                         href="/"
-                        className="text-2xl hover:underline"
+                        className="text-2xl hover:font-bold"
                         onClick={() => setIsMenuOpen(false)}
                     >
                         Home
                     </a>
                     <a
                         href="/about"
-                        className="text-2xl hover:underline"
+                        className="text-2xl hover:font-bold"
                         onClick={() => setIsMenuOpen(false)}
                     >
                         About Me
                     </a>
                     <a
                         href="/projects"
-                        className="text-2xl hover:underline"
+                        className="text-2xl hover:font-bold"
                         onClick={() => setIsMenuOpen(false)}
                     >
                         Projects
@@ -107,29 +108,30 @@ export default function Header() {
 
         {/* Modal */}
         {isModalOpen && (
-            <div
-            className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
-            onClick={() => setIsModalOpen(false)} // 点击背景关闭 Modal
-            >
-                <div
-                    className="bg-white rounded-lg shadow-lg w-[300px] lg:w-[500px] p-6 relative"
-                    onClick={(e) => e.stopPropagation()} // 防止点击 Modal 内部关闭
-                >
-                    <h1 className="text-3xl font-bold">Contact Me</h1>
-                    <button 
-                    className="absolute top-3 right-3 text-gray-600 hover:text-black"
-                    onClick={() => setIsModalOpen(false)}
-                    >
-                        <FaTimes />
-                    </button>
-                    <form className="flex flex-col mt-4">
-                        <input type="text" name="name" placeholder="Name" className="p-2 border rounded mb-2" />
-                        <input type="email" name="email" placeholder="Email" className="p-2 border rounded mb-2" />
-                        <textarea name="message" placeholder="Message" className="p-2 border rounded mb-2 max-h-[200px]"></textarea>
-                        <button type="submit" className="p-2 bg-purple-600 text-white rounded">Send</button>
-                    </form>
-                </div>
-            </div>
+            <ContactModal setIsModalOpen={setIsModalOpen}/>
+            // <div
+            // className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+            // onClick={() => setIsModalOpen(false)} // 点击背景关闭 Modal
+            // >
+            //     <div
+            //         className="bg-white rounded-lg shadow-lg w-[300px] lg:w-[500px] p-6 relative"
+            //         onClick={(e) => e.stopPropagation()} // 防止点击 Modal 内部关闭
+            //     >
+            //         <h1 className="text-3xl font-bold">Contact Me</h1>
+            //         <button 
+            //         className="absolute top-3 right-3 text-gray-600 hover:text-black"
+            //         onClick={() => setIsModalOpen(false)}
+            //         >
+            //             <FaTimes />
+            //         </button>
+            //         <form className="flex flex-col mt-4">
+            //             <input type="text" name="name" placeholder="Name" className="p-2 border rounded mb-2" />
+            //             <input type="email" name="email" placeholder="Email" className="p-2 border rounded mb-2" />
+            //             <textarea name="message" placeholder="Message" className="p-2 border rounded mb-2 max-h-[200px]"></textarea>
+            //             <button type="submit" className="p-2 bg-purple-600 text-white rounded">Send</button>
+            //         </form>
+            //     </div>
+            // </div>
         )}
     </>
   );
