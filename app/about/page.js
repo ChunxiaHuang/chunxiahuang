@@ -1,11 +1,12 @@
-import { TbBrandNextjs, TbBrandReact } from "react-icons/tb";
+import { TbBrandCSharp, TbBrandJavascript, TbBrandNextjs, TbBrandPython, TbBrandReact } from "react-icons/tb";
 import Link from "next/link";
-import { FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
+import { FaJava, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { DiPostgresql } from "react-icons/di";
 
 export default function About() {
   return (
-    <div className="bg-gradient-to-b from-purple-600 to-green-600 h-screen">
+    <div className="bg-gradient-to-b from-purple-600 to-green-600 min-h-screen pb-12">
       {/* <div className="px-6 py-6 md:px-16 flex space-x-6 mb:space-x-16"> */}
       <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 p-6 md:px-16 lg:gap-10">
         <div>
@@ -17,7 +18,7 @@ export default function About() {
           </div>
 
           {/* Contact section */}
-          <div>
+          <div className="ml-2">
             <h2 className="h2 mt-6 mb-2">Contact</h2>
             <div className="flex items-center space-x-2 mb-2 text-white">
               <FaMapMarkerAlt />
@@ -37,15 +38,35 @@ export default function About() {
           </div>
 
           {/* Skill section */}
-          <div>
+          <div className="ml-2">
             <h2 className="h2 mt-6 mb-2">Skills</h2>
             <div className="flex items-center space-x-2 mb-2 text-white">
-              <TbBrandNextjs className="icon" />
+              <TbBrandNextjs className="h-6" />
               <p>Nextjs</p>
             </div>
             <div className="flex items-center space-x-2 mb-2 text-white">
-              <TbBrandReact className="icon" />
+              <TbBrandReact className="h-6" />
               <p>React</p>
+            </div>
+            <div className="flex items-center space-x-2 mb-2 text-white">
+              <TbBrandJavascript />
+              <p>JavaScript</p>
+            </div>
+            <div className="flex items-center space-x-2 mb-2 text-white">
+              <DiPostgresql />
+              <p>Postgresql</p>
+            </div>
+            <div className="flex items-center space-x-2 mb-2 text-white">
+              <FaJava />
+              <p>Java</p>
+            </div>
+            <div className="flex items-center space-x-2 mb-2 text-white">
+              <TbBrandPython />
+              <p>Python</p>
+            </div>
+            <div className="flex items-center space-x-2 mb-2 text-white">
+              <TbBrandCSharp />
+              <p>CSharp</p>
             </div>
 
           </div>
@@ -53,6 +74,12 @@ export default function About() {
 
         <section className="mt-4 p">
           {/* <p>I am a passionate software developer with skills in...</p> */}
+          <h2 className="h2 mb-2">Education</h2>
+          <p>Aute ea quis quis et amet laborum esse voluptate ullamco sint mollit mollit ad esse. Irure cupidatat esse dolore et occaecat qui velit nostrud occaecat. Id minim anim incididunt labore elit nisi excepteur amet reprehenderit. Exercitation deserunt veniam nostrud adipisicing do cillum nisi consectetur. Irure in nisi aliquip cillum ipsum elit ipsum quis labore anim. Quis ut excepteur veniam dolore est id elit laborum sint.</p>
+          <h2 className="h2 mt-6 mb-2">Experience</h2>
+          <p>Aute ea quis quis et amet laborum esse voluptate ullamco sint mollit mollit ad esse. Irure cupidatat esse dolore et occaecat qui velit nostrud occaecat. Id minim anim incididunt labore elit nisi excepteur amet reprehenderit. Exercitation deserunt veniam nostrud adipisicing do cillum nisi consectetur. Irure in nisi aliquip cillum ipsum elit ipsum quis labore anim. Quis ut excepteur veniam dolore est id elit laborum sint.</p>
+          <h2 className="h2 mt-6 mb-2">Volunteer</h2>
+          <p>Aute ea quis quis et amet laborum esse voluptate ullamco sint mollit mollit ad esse. Irure cupidatat esse dolore et occaecat qui velit nostrud occaecat. Id minim anim incididunt labore elit nisi excepteur amet reprehenderit. Exercitation deserunt veniam nostrud adipisicing do cillum nisi consectetur. Irure in nisi aliquip cillum ipsum elit ipsum quis labore anim. Quis ut excepteur veniam dolore est id elit laborum sint.</p>
           <p>Aute ea quis quis et amet laborum esse voluptate ullamco sint mollit mollit ad esse. Irure cupidatat esse dolore et occaecat qui velit nostrud occaecat. Id minim anim incididunt labore elit nisi excepteur amet reprehenderit. Exercitation deserunt veniam nostrud adipisicing do cillum nisi consectetur. Irure in nisi aliquip cillum ipsum elit ipsum quis labore anim. Quis ut excepteur veniam dolore est id elit laborum sint.</p>
           {/* <ul>
             <li>Programming Languages: JavaScript, Python...</li>

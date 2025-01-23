@@ -77,9 +77,3 @@ body {
     inset 0 0 1px rgba(255, 255, 255, 1); /* 内发光 */;
 
 }
-
-.icon {
-  width: 25px;
-  height: 25px;
-  color: white;
-}
