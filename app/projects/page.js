@@ -18,12 +18,12 @@ const projects = [
 export default function Projects() {
   return (
     <div className="bg-gradient-to-b from-purple-600 to-blue-600 min-h-screen">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 md:px-16 lg:gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 md:px-16 md:gap-10 lg:gap-12">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-white shadow-md rounded-lg p-4 md:p-6 hover:shadow-lg transition">
-            <h3 className="font-bold text-2xl py-2">{project.title}</h3>
+            className="bg-white shadow-md rounded-lg p-6 md:p-8 hover:shadow-lg transition">
+            <h3 className="font-bold text-2xl py-2 text-purple-700">{project.title}</h3>
             <p className="text-gray-600">{project.description}</p>
             <img
               src={`/images/${project.id}/01.jpg`}
